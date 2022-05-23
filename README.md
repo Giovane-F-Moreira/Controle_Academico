@@ -104,6 +104,8 @@ Para povoar o banco de dados execute o script:
 -- ===================
 -- Tabela Departamento
 -- ===================
+
+USE controleacademico;
 INSERT INTO Departamento (codDepart, nome) VALUES (1, 'Ciencias Agrarias');
 INSERT INTO Departamento (codDepart, nome) VALUES (2, 'Ciencias Biologicas');
 INSERT INTO Departamento (codDepart, nome) VALUES (3, 'Ciencias da Saude');
@@ -114,6 +116,7 @@ INSERT INTO Departamento (codDepart, nome) VALUES (6, 'Engenharias');
 -- ============
 -- Tabela Curso
 -- ============
+USE controleacademico;
 INSERT INTO Curso (codCurso, nome, codDepart) VALUES (1, 'Sistemas de Informacao', 4);
 INSERT INTO Curso (codCurso, nome, codDepart) VALUES (2, 'Agronomia', 1);
 INSERT INTO Curso (codCurso, nome, codDepart) VALUES (3, 'Engenharia Ambiental', 6);
@@ -122,6 +125,7 @@ INSERT INTO Curso (codCurso, nome, codDepart) VALUES (4, 'Engenharia da Computac
 -- ============
 -- Tabela Aluno
 -- ============
+USE controleacademico;
 -- Alunos curso de Sistemas de Informação
 INSERT INTO Aluno (matricula, nome, sexo, dataNascimento, cidade, rua, bairro, uf, numero, codCurso)
 	VALUES ('20120001', 'Claudio Santana Cruz', 'm', '1982-05-30', 'Vitoria da Conquista', 'Jardim', 'Centro', 'BA', 245, 1);
@@ -166,6 +170,7 @@ INSERT INTO Aluno (matricula, nome, sexo, dataNascimento, cidade, rua, bairro, u
 -- Tabela AlunoTelefone
 -- ====================
 -- Telefones dos alunos do curso de Sistemas de Informação
+USE controleacademico;
 INSERT INTO AlunoTelefone (matricula, nroTelefone) VALUES ('20120001', '7732612279');
 INSERT INTO AlunoTelefone (matricula, nroTelefone) VALUES ('20120001', '7732612167');
 INSERT INTO AlunoTelefone (matricula, nroTelefone) VALUES ('20120002', '7732612279');
@@ -183,6 +188,7 @@ INSERT INTO AlunoTelefone (matricula, nroTelefone) VALUES ('20120007', '77326312
 -- Tabela Disciplina
 -- =================
 -- Disciplinas do curso de Sistemas de Informação
+USE controleacademico;
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (1, 'Introducao a Programacao', 80, 'I');
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (2, 'Estrutura de Dados', 80, 'III');
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (3, 'Banco de Dados I', 60, 'IV');
@@ -191,6 +197,7 @@ INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (5, 
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (6, 'Promogracao Web', 80, 'V');
 
 -- Disciplinas do curso de Agronomia
+USE controleacademico;
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (7, 'Portugues', 80, 'I');
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (8, 'Quimica', 60, 'I');
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (9, 'Zootecnica', 80, 'II');
@@ -199,6 +206,7 @@ INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (11,
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (12, 'Criacao de Pequenos Animais', 80, 'VII');
 
 -- Disciplinas do curso de Engenharia Ambiental
+USE controleacademico;
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (13, 'Introducao a Poluicao Ambiental', 60, 'II');
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (14, 'Fundamentos de Biologia Ambiental', 80, 'III');
 INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (15, 'Geotecnia Ambiental', 80, 'III');
@@ -209,6 +217,7 @@ INSERT INTO Disciplina (codDisciplina, nome, cargaHoraria, semestre) VALUES (18,
 -- ================
 -- Tabela Professor
 -- ================
+USE controleacademico;
 INSERT INTO Professor (matricula, nome, titulacao) VALUES (20120001, 'Lidiana Franca martins', 'Mestrado');
 INSERT INTO Professor (matricula, nome, titulacao) VALUES (20120002, 'Fernando Bulhoes', 'Mestrado');
 INSERT INTO Professor (matricula, nome, titulacao) VALUES (20120003, 'Claudio Rodolfo Oliveira', 'Mestrado');
@@ -219,6 +228,7 @@ INSERT INTO Professor (matricula, nome, titulacao) VALUES (20120005, 'Rosana Mou
 -- Tabela Ministra
 -- ===============
 -- Professores do curso de Sistemas de Informação
+USE controleacademico;
 INSERT INTO Ministra (matricula, codDisciplina, ano, semestre) VALUES (20120004, 1, '2011', 'I');
 INSERT INTO Ministra (matricula, codDisciplina, ano, semestre) VALUES (20120003, 2, '2011', 'II');
 INSERT INTO Ministra (matricula, codDisciplina, ano, semestre) VALUES (20120001, 3, '2012', 'II');
@@ -230,6 +240,7 @@ INSERT INTO Ministra (matricula, codDisciplina, ano, semestre) VALUES (20120003,
 -- Tabela Prerequisito
 -- ===================
 -- Prerequisitos de Sistemas de Informação (tem como prerequisito)
+USE controleacademico;
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (2, 1);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (3, 1);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (4, 2);
@@ -240,6 +251,7 @@ INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (6, 3);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (6, 4);
 
 -- Prerequisitos de Agronomia (tem como prerequisito)
+USE controleacademico;
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (9, 7);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (9, 8);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (10, 7);
@@ -248,6 +260,7 @@ INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (11, 9);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (12, 10);
 
 -- Prerequisitos de Engenharia Ambiental (tem como prerequisito)
+USE controleacademico;
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (15, 13);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (16, 13);
 INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (17, 14);
@@ -258,6 +271,7 @@ INSERT INTO Prerequisito (codDisciplina, codPrerequisito) VALUES (18, 13);
 -- Tabela Matriculado
 -- ===================
 -- Alunos de Sistemas de Informação
+USE controleacademico;
 INSERT INTO Matriculado (matricula, codDisciplina) VALUES ('20120001', 1);
 INSERT INTO Matriculado (matricula, codDisciplina) VALUES ('20120002', 1);
 INSERT INTO Matriculado (matricula, codDisciplina) VALUES ('20120003', 1);
@@ -373,6 +387,7 @@ INSERT INTO Matriculado (matricula, codDisciplina) VALUES ('20120018', 18);
 -- Tabela Concluido
 -- ================
 -- Alunos de Sistemas de Informação
+USE controleacademico;
 INSERT INTO Concluido (matricula, codDisciplina, nota) VALUES ('20120001', 1, 7.7);
 INSERT INTO Concluido (matricula, codDisciplina, nota) VALUES ('20120002', 1, 7.8);
 INSERT INTO Concluido (matricula, codDisciplina, nota) VALUES ('20120003', 1, 6.7);
@@ -430,5 +445,6 @@ INSERT INTO Concluido (matricula, codDisciplina, nota) VALUES ('20120013', 10, 1
 -- ===================
 -- Tabela Usario
 -- ===================
+USE controleacademico;
 INSERT INTO Usuario (nome, dataNascimento, cpf, telefone, sexo, email, senha, permissao) VALUES ('Diogo Alves', '1992-05-30', '055.151.616-54','(41)52523-4364','m','Diogo@gmail.com','diogo123', 1);
 INSERT INTO Usuario (nome, dataNascimento, cpf, telefone, sexo, email, senha, permissao) VALUES ('Alex Lopes', '1998-03-12', '045.132.478-85','(41)52558-4364','m','Alex@gmail.com','Alex123', 1);
